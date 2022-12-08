@@ -29,30 +29,43 @@ export default function RegistrationModal() {
 			<p className={styles.loginText}>
 				Or log in using an email and password, after registering:
 			</p>
-			<label className={styles.label}>Email :</label>
-			<input
-				value={user.email}
-				className={styles.input}
-				name="email"
-				placeholder="your@email.com"
-				onChange={handleChange}
-			></input>
-			<label className={styles.label}>Password :</label>
-			<input
-				value={user.password}
-				className={styles.input}
-				name="password"
-				placeholder="password"
-				onChange={handleChange}
-			></input>
-			<div className={styles.btnWrapper}>
-				<button type="button" className={styles.modalBtn} onClick={onLogin}>
-					Log In
-				</button>
-				<button type="button" className={styles.modalBtn}>
-					Registration
-				</button>
-			</div>
+			<form>
+				<label className={styles.label}>
+					Email :
+					<input
+						value={user.email}
+						className={styles.input}
+						type="email"
+						name="email"
+						placeholder="your@email.com"
+						pattern="[A-Za-zА-Яа-яЁёЄєЇї0-9._%+-]+@[A-Za-zА-Яа-яЁёЄєЇї0-9.-]+\.[A-Za-zА-Яа-яЁёЄєЇї]{2,4}$"
+						title="This is a required field"
+						required
+						onChange={handleChange}
+					></input>
+				</label>
+				<label className={styles.label}>
+					Password :
+					<input
+						value={user.password}
+						className={styles.input}
+						type="email"
+						name="password"
+						placeholder="password"
+						required
+						onChange={handleChange}
+					></input>
+				</label>
+
+				<div className={styles.btnWrapper}>
+					<button type="submit" className={styles.modalBtn} onClick={onLogin}>
+						Log In
+					</button>
+					<button type="button" className={styles.modalBtn}>
+						Registration
+					</button>
+				</div>
+			</form>
 		</div>
 	);
 }
